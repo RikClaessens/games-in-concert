@@ -39,7 +39,7 @@ const TopContainer = styled('div')`
 
 const Container = styled('div')`
   font-family: 'Free Pixel';
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.1;
   max-width: 60%;
   width: 60%;

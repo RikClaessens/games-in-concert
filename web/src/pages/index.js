@@ -20,7 +20,7 @@ const IndexPage = () => (
     luisteren naar de muziek van het orkest. Maar het gaat een grote show worden
     waar het publiek de kans krijgt op te gamen op de klanken van De Kleine
     Harmonie. De spellen die voorbij zullen komen variëren van de populaire
-    telefoonspellen tot de klassieke computergames en de ouderwetse klassiekers.{' '}
+    telefoonspellen tot de klassieke computergames en de ouderwetse klassiekers.
     <br />
     <br />
     <br /> Lijm en cultuur
