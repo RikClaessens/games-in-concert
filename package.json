@@ -1,0 +1,22 @@
+{
+  "name": "games-in-concert-web-infra",
+  "private": true,
+  "description": "games-in-concert.harmoniedelft.nl",
+  "version": "0.1.0",
+  "author": "Rik Claessens <webmaster@harmoniedelft.nl>",
+  "dependencies": {
+    "serverless": "^1.59.3",
+    "serverless-s3-sync": "^1.9.2"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "license": "MIT",
+  "scripts": {
+    "deploy:sls": "serverless deploy --aws-profile rik-aws --stage prod",
+    "deploy": "cd web && gatsby clean && gatsby build && cd .. && yarn s3-sync && yarn invalidate-cloudfront",
+    "package": "serverless package",
+    "invalidate-cloudfront": "aws cloudfront create-invalidation --profile rik-aws --distribution-id E316NP9Z37GOBO --paths '/*'",
+    "s3-sync": "aws --profile rik-aws s3 sync web/public/ s3://games-in-concert.harmoniedelft.nl --exclude '*.DS_Store' --delete"
+  }
+}

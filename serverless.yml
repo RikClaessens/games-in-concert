@@ -1,4 +1,4 @@
-service: vrijheidsconcertdelft-web
+service: games-in-concert-web
 
 provider:
   name: aws
@@ -11,11 +11,11 @@ plugins:
 custom:
   stage: ${opt:stage, self:provider.stage}
   siteName:
-    prod: vrijheidsconcertdelft.nl
-    other: ${self:custom.stage}.plant-een-boom.com
+    prod: games-in-concert.harmoniedelft.nl
+    other: ${self:custom.stage}.games-in-concert.harmoniedelft.nl
   hostedZoneName: ${self:custom.siteName.prod}
-  hostedZoneId: Z8TCVINHJQ97S
-  certArn: arn:aws:acm:us-east-1:000914857670:certificate/891b7b28-f8fa-4282-bfbe-98d35c5c4f8e
+  hostedZoneId: Z078679117A6O1WMKH5F7
+  certArn: arn:aws:acm:us-east-1:000914857670:certificate/84986503-b334-4a1c-8aa8-7aabc9b0bb16
   bucketName: ${self:custom.siteName.${self:custom.stage}, self:custom.siteName.other}
   s3Sync:
     - bucketName: ${self:custom.bucketName}
@@ -113,16 +113,6 @@ resources:
             Fn::GetAtt: CloudFrontDistribution.DomainName
           HostedZoneId: Z2FDTNDATAQYW2
         Name: www.${self:custom.siteName.prod}
-        Type: 'A'
-    DevDnsRecord:
-      Type: AWS::Route53::RecordSet
-      Condition: IsDev
-      Properties:
-        HostedZoneName: ${self:custom.hostedZoneName}.
-        AliasTarget:
-          DNSName: s3-website-eu-west-1.amazonaws.com
-          HostedZoneId: Z1BKCTXD74EZPE
-        Name: ${self:custom.siteName.${self:custom.stage}, self:custom.siteName.other}
         Type: 'A'
 
 Outputs:
