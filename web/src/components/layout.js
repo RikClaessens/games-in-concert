@@ -51,11 +51,11 @@ const Container = styled('div')`
   text-align: justify;
 
   @media ${mediaQueries.tablet} {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   @media ${mediaQueries.laptop} {
-    font-size: 32px;
+    font-size: 24px;
   }
 `
 
