@@ -65,14 +65,9 @@ const IndexPage = () => (
     tijdens quizzen, videogames en bordspellen. Daarbij zal de Kleine Harmonie
     de verschillende games van achtergrond muziek voorzien, een speelse muzikale
     quiz met het publiek spelen en afwisselend tussen de rondes zal de Kleine
-    Harmonie een aantal stukken gamemuziek uitvoeren. <br />
-    <br />
-    Bij de verschillende gamerondes zal of het hele publiek meespelen bij de
-    quizzen of zullen enkele deelnemers uit de verschillende vakken het op het
-    podium tegen elkaar opnemen, met de klanken van de ‘Kleine’ Harmonie op de
-    achtergrond. Met mooie, bekende, en soms grappige muziek over alles wat met
-    spel en games te maken heeft, zal dit concert een interactieve en
-    interessante avond worden.
+    Harmonie een aantal stukken gamemuziek uitvoeren. Met mooie, bekende, en
+    soms grappige muziek over alles wat met spel en games te maken heeft, zal
+    dit concert een interactieve en interessante avond worden.
     <ImageContainer>
       <KHLijmEnCultuur />
     </ImageContainer>
@@ -81,20 +76,19 @@ const IndexPage = () => (
     het theater van de games. De grote industriële hal biedt veel flexibiliteit
     voor de inrichting van ons concert waardoor we het orkest en de gamers goed
     samen kunnen spelen.
-    <Title>Kaartverkoop</Title>
-    De kaartverkoop is nog niet gestart, hou deze pagina in de gaten voor meer
-    informatie.
     <Title>Wie is de Kleine Harmonie?</Title>
     De Kleine Harmonie is een onderdeel van De Koninklijke Harmoniekapel Delft.
-    Oorspronkelijk opgericht als aspirantenorkest van de Kapel, maar inmiddels
-    zijn wij uitgegroeid tot een compleet zelfstandig orkest van ruim 50
-    muzikanten. De niet meer zo “Kleine” Harmonie bestaat uit een mix van
-    studenten en volwassenen van diverse leeftijden die allen samen met veel
-    plezier gevarieerde en toegankelijke muziek willen maken en nu dus ook voor
-    het Games in Concert.
+    Door de jaren heen is de Kleine Harmonie gegroeid tot een compleet
+    zelfstandig orkest van ruim 50 muzikanten. De niet meer zo “Kleine” Harmonie
+    bestaat uit een mix van studenten en volwassenen van diverse leeftijden die
+    allen samen met veel plezier gevarieerde en toegankelijke muziek willen
+    maken en nu dus ook voor het Games in Concert.
     <ImageContainer>
       <KH />
     </ImageContainer>
+    <Title>Kaartverkoop</Title>
+    De kaartverkoop is nog niet gestart, hou deze pagina in de gaten voor meer
+    informatie.
   </Layout>
 )
 
