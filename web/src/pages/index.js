@@ -8,6 +8,20 @@ import KH from '../components/images/kh'
 import KHLijmEnCultuur from '../components/images/khLijmEnCultuur'
 import Dots from '../images/dots.svg'
 
+const BigTitle = styled('div')`
+  margin-top: 32px;
+  font-size: 24px;
+  font-family: Free Pixel;
+
+  @media ${mediaQueries.tablet} {
+    font-size: 36px;
+  }
+
+  @media ${mediaQueries.laptop} {
+    font-size: 52px;
+  }
+`
+
 const Title = styled('div')`
   margin-top: 32px;
   font-size: 20px;
@@ -37,10 +51,10 @@ const ImageContainer = styled('div')`
 const IndexPage = () => (
   <Layout>
     <SEO />
-    <i>
+    <BigTitle>
       Games in Concert, een interactief concert waar jij kan gamen op de klanken
       van de Kleine Harmonie{' '}
-    </i>
+    </BigTitle>
     <br />
     <br />
     De Kleine Harmonie zal op 7 november in Lijm en Cultuur haar
@@ -77,8 +91,11 @@ const IndexPage = () => (
     voor de inrichting van ons concert waardoor we het orkest en de gamers goed
     samen kunnen spelen.
     <Title>Wie is de Kleine Harmonie?</Title>
-    De Kleine Harmonie is een onderdeel van De Koninklijke Harmoniekapel Delft.
-    Door de jaren heen is de Kleine Harmonie gegroeid tot een compleet
+    De Kleine Harmonie is een onderdeel van{' '}
+    <a href="https://harmoniekapel.nl/" target="_blank">
+      De Koninklijke Harmoniekapel Delft
+    </a>
+    . Door de jaren heen is de Kleine Harmonie gegroeid tot een compleet
     zelfstandig orkest van ruim 50 muzikanten. De niet meer zo “Kleine” Harmonie
     bestaat uit een mix van studenten en volwassenen van diverse leeftijden die
     allen samen met veel plezier gevarieerde en toegankelijke muziek willen
