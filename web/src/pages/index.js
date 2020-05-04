@@ -25,6 +25,7 @@ const Title = styled('div')`
   margin-top: 32px;
   font-size: 20px;
   line-height: 1.5;
+  font-weight: 700;
 
   @media ${mediaQueries.tablet} {
     font-size: 32px;
@@ -46,35 +47,16 @@ const IndexPage = () => (
     <SEO />
     <BigTitle>
       Games in Concert, een interactief concert waar jij kan gamen op de klanken
-      van de Kleine Harmonie{' '}
+      van de Kleine Harmonie!
     </BigTitle>
     <br />
     <br />
-    De Kleine Harmonie zal op 7 november in Lijm en Cultuur haar
-    muziekevenement, Games in Concert, uitvoeren. Het zal geen standaard
-    uitvoering gaan worden waar de enige rol van het publiek is om te luisteren
-    naar de muziek van het orkest. Maar het gaat een grote show worden waar het
-    publiek de kans krijgt op te gamen op de klanken van De Kleine Harmonie. De
-    spellen die voorbij zullen komen variëren van de populaire telefoonspellen
-    tot de klassieke computergames en de ouderwetse klassiekers.
-    <Title>Het idee</Title>
-    Het concert is ontstaan uit de wens van onze jeugdleden om hun
-    leeftijdsgenoten te betrekken en te laten genieten van muziek. Daarmee
-    kunnen zij laten zien dat de passie voor het spelen van games net is zoals
-    onze passie voor het maken van muziek. De Kleine Harmonie zal dit doen met
-    een greep uit de wondere wereld van de meeslepende spelsoundtracks, en hoopt
-    zo nieuw publiek te trekken en meer jeugd te interesseren voor
-    harmoniemuziek.
-    <Title>Hoe werkt het?</Title>
-    Tijdens het concert zal het publiek, net zoals bij vele bekende spelshows,
-    ingedeeld worden in vakken waar zij de rest van de avond meespelen in
-    verschillende gamerondes om zoveel mogelijk punten proberen te verzamelen
-    tijdens quizzen, videogames en bordspellen. Daarbij zal de Kleine Harmonie
-    de verschillende games van achtergrond muziek voorzien, een speelse muzikale
-    quiz met het publiek spelen en afwisselend tussen de rondes zal de Kleine
-    Harmonie een aantal stukken gamemuziek uitvoeren. Met mooie, bekende, en
-    soms grappige muziek over alles wat met spel en games te maken heeft, zal
-    dit concert een interactieve en interessante avond worden.
+    Op 7 november zal dit muziekevenement worden uitgevoerd in Lijm en Cultuur.
+    Het zal geen standaard uitvoering gaan worden waar de enige rol van het
+    publiek is om te luisteren naar de muziek van het orkest. Maar het gaat een
+    grote spelshow worden waar het publiek de kans krijgt om te gamen tijdens
+    het concert. De spellen die voorbij zullen komen variëren van de populaire
+    telefoonspellen tot de klassieke computergames en de ouderwetse klassiekers.
     <ImageContainer>
       <KHLijmEnCultuur />
     </ImageContainer>
@@ -99,7 +81,41 @@ const IndexPage = () => (
     <Title>Kaartverkoop</Title>
     De kaartverkoop is nog niet gestart, hou deze pagina in de gaten voor meer
     informatie.
+    <Title>Praktische informatie</Title>
+    <InfoRow label="Datum">7 november 2020</InfoRow>
+    <InfoRow label="Adres">
+      Lijm en Cultuur
+      <br />
+      Rotterdamseweg 272
+      <br />
+      2628 AT Delft
+    </InfoRow>
   </Layout>
+)
+
+const InfoRow = ({ label, children }) => (
+  <div
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginTop: 16,
+    }}
+  >
+    <div
+      style={{
+        fontWeight: 700,
+        flex: 1,
+        justifyContent: 'center',
+        display: 'flex',
+      }}
+    >
+      <span>{label}:</span>
+    </div>
+    <div style={{ display: 'flex', flex: 2 }}>
+      <span>{children}</span>
+    </div>
+  </div>
 )
 
 export default IndexPage
