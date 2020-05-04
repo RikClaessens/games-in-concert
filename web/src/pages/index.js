@@ -6,11 +6,10 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import KH from '../components/images/kh'
 import KHLijmEnCultuur from '../components/images/khLijmEnCultuur'
-import Dots from '../images/dots.svg'
 
 const BigTitle = styled('div')`
   margin-top: 32px;
-  font-size: 24px;
+  font-size: 22px;
   font-family: Free Pixel;
 
   @media ${mediaQueries.tablet} {
@@ -18,7 +17,7 @@ const BigTitle = styled('div')`
   }
 
   @media ${mediaQueries.laptop} {
-    font-size: 52px;
+    font-size: 40px;
   }
 `
 
@@ -32,20 +31,14 @@ const Title = styled('div')`
   }
 
   @media ${mediaQueries.laptop} {
-    font-size: 48px;
+    font-size: 36px;
   }
 `
 
 const ImageContainer = styled('div')`
-  max-width: 60%;
-  width: 60%;
+  max-width: 90%;
+  width: 90%;
   margin: 32px auto 0 auto;
-  border-style: dotted;
-  border-color: rgba(213, 126, 0, 1);
-  border-image-source: url(${Dots});
-  border-image-slice: 33% 33%;
-  border-image-repeat: round;
-  border-width: 12px;
 `
 
 const IndexPage = () => (
