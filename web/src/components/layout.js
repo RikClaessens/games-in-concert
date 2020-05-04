@@ -3,7 +3,27 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import useSound from 'use-sound'
 
-import pacmanSound from '../sounds/pacman_chomp.wav'
+// sounds
+import {
+  pacman,
+  blinky,
+  pinky,
+  inky,
+  clyde,
+  smbOneUp,
+  smbCoin,
+  smbVine,
+  smbJump,
+  smbMarioDie,
+  smbPowerUp,
+  zeldaSecret,
+  sonic,
+  pokemon,
+  marioKart,
+  angryBirds,
+  donkeyKong,
+  playsoundIfClicked,
+} from './sounds'
 
 import './layout.css'
 import Background from './Background'
@@ -14,60 +34,73 @@ import { mediaQueries } from '../theme'
 
 const Layout = ({ children }) => {
   const topContainer = useRef(null)
+  const bottomContainer = useRef(null)
 
-  const [playPacmanSound] = useSound(pacmanSound)
+  const [playPacmanSound] = useSound(pacman.sound)
+  const [playBlinkySound] = useSound(blinky.sound)
+  const [playPinkySound] = useSound(pinky.sound)
+  const [playInkySound] = useSound(inky.sound)
+  const [playClydeSound] = useSound(clyde.sound)
 
-  const handleClick = event => {
-    const { clientX, clientY } = event
+  const topContainerSounds = [
+    { ...pacman, playSound: playPacmanSound },
+    { ...blinky, playSound: playBlinkySound },
+    { ...pinky, playSound: playPinkySound },
+    { ...inky, playSound: playInkySound },
+    { ...clyde, playSound: playClydeSound },
+  ]
 
-    const topRect = topContainer.current.getBoundingClientRect()
+  const [playSmbOneUpSound] = useSound(smbOneUp.sound)
+  const [playSmbCoinSound] = useSound(smbCoin.sound)
+  const [playSmbJumpSound] = useSound(smbJump.sound)
+  const [playSmbVineSound] = useSound(smbVine.sound)
+  const [playSmbMarioDieSound] = useSound(smbMarioDie.sound)
+  const [playSmbPowerUpSound] = useSound(smbPowerUp.sound)
+  const [playZeldaSecretSound] = useSound(zeldaSecret.sound)
+  const [playSonicSound] = useSound(sonic.sound)
+  const [playPokemonSound] = useSound(pokemon.sound)
+  const [playMarioKartSound] = useSound(marioKart.sound)
+  const [playAngryBirdsSound] = useSound(angryBirds.sound)
+  const [playDonkeyKongSound] = useSound(donkeyKong.sound)
 
-    const leftOfPacman = 0.895833333
-    const rightOfPacman = 0.982638889
-    const topOfPacman = 0.785555556
-    const bottomOfPacman = 0.943333333
+  const bottomContainerSounds = [
+    { ...smbOneUp, playSound: playSmbOneUpSound },
+    { ...smbCoin, playSound: playSmbCoinSound },
+    { ...smbJump, playSound: playSmbJumpSound },
+    { ...smbVine, playSound: playSmbVineSound },
+    { ...smbMarioDie, playSound: playSmbMarioDieSound },
+    { ...smbPowerUp, playSound: playSmbPowerUpSound },
+    { ...zeldaSecret, playSound: playZeldaSecretSound },
+    { ...sonic, playSound: playSonicSound },
+    { ...pokemon, playSound: playPokemonSound },
+    { ...marioKart, playSound: playMarioKartSound },
+    { ...angryBirds, playSound: playAngryBirdsSound },
+    { ...donkeyKong, playSound: playDonkeyKongSound },
+  ]
 
-    const leftXOfPacman = leftOfPacman * topRect.width + topRect.left
-    const rightXOfPacman = rightOfPacman * topRect.width + topRect.left
-    const topYOfPacman = topOfPacman * topRect.height + topRect.top
-    const bottomYOfPacman = bottomOfPacman * topRect.height + topRect.top
-
-    // console.log({
-    //   leftXOfPacman,
-    //   rightXOfPacman,
-    //   topYOfPacman,
-    //   bottomYOfPacman,
-    //   topRect,
-    //   pageX,
-    //   pageY,
-    //   screenX,
-    //   screenY,
-    //   clientX,
-    //   clientY,
-    // })
-
-    if (
-      clientX >= leftXOfPacman &&
-      clientX <= rightXOfPacman &&
-      clientY >= topYOfPacman &&
-      clientY <= bottomYOfPacman
-    ) {
-      playPacmanSound()
-    } else {
-      console.log('🔴')
-    }
+  const handleClick = ({ event, ref, sounds }) => {
+    sounds.forEach(target =>
+      playsoundIfClicked({
+        event,
+        ref,
+        ...target,
+      }),
+    )
   }
 
   return (
     <Background>
-      <div
-        style={{
-          margin: `0 auto`,
-          width: 1440,
-          maxWidth: '80%',
-        }}
-      >
-        <TopContainer onClick={handleClick} ref={topContainer}>
+      <Wrapper>
+        <TopContainer
+          onClick={event =>
+            handleClick({
+              event,
+              sounds: topContainerSounds,
+              ref: topContainer,
+            })
+          }
+          ref={topContainer}
+        >
           <Top />
         </TopContainer>
         <Mid>
@@ -77,14 +110,43 @@ const Layout = ({ children }) => {
             </span>
           </Container>
         </Mid>
-        <Bottom />
-      </div>
+        <BottomContainer
+          onClick={event =>
+            handleClick({
+              event,
+              sounds: bottomContainerSounds,
+              ref: bottomContainer,
+            })
+          }
+          ref={bottomContainer}
+        >
+          <Bottom />
+        </BottomContainer>
+      </Wrapper>
     </Background>
   )
 }
 
+const Wrapper = styled('div')`
+  max-width: 98%;
+  margin: 0 auto;
+  width: 1440px;
+
+  @media ${mediaQueries.tablet} {
+    max-width: 90%;
+  }
+
+  @media ${mediaQueries.laptop} {
+    max-width: 70%;
+  }
+`
+
 const TopContainer = styled('div')`
   margin-bottom: -10%;
+  pointer-events: all;
+`
+
+const BottomContainer = styled('div')`
   pointer-events: all;
 `
 

@@ -32,6 +32,7 @@ const Background = styled(BackgroundSection)`
   background-repeat: repeat-y;
   background-position: center top;
   color: #fff;
+  pointer-events: none;
 `
 
 export default Background

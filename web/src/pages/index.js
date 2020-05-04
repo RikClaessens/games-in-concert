@@ -7,7 +7,7 @@ import SEO from '../components/seo'
 import KH from '../components/images/kh'
 import KHLijmEnCultuur from '../components/images/khLijmEnCultuur'
 
-const BigTitle = styled('div')`
+const BigTitle = styled.div`
   margin-top: 32px;
   font-size: 22px;
   font-family: Free Pixel;
@@ -21,11 +21,10 @@ const BigTitle = styled('div')`
   }
 `
 
-const Title = styled('div')`
+const Title = styled.div`
   margin-top: 32px;
   font-size: 20px;
   line-height: 1.5;
-  font-weight: 700;
 
   @media ${mediaQueries.tablet} {
     font-size: 32px;
@@ -36,7 +35,7 @@ const Title = styled('div')`
   }
 `
 
-const ImageContainer = styled('div')`
+const ImageContainer = styled.div`
   max-width: 90%;
   width: 90%;
   margin: 32px auto 0 auto;
@@ -44,7 +43,7 @@ const ImageContainer = styled('div')`
 
 const IndexPage = () => (
   <Layout>
-    <SEO />
+    <SEO title="Games in Concert" />
     <BigTitle>
       Games in Concert, een interactief concert waar jij kan gamen op de klanken
       van de Kleine Harmonie!
@@ -67,7 +66,11 @@ const IndexPage = () => (
     samen kunnen spelen.
     <Title>Wie is de Kleine Harmonie?</Title>
     De Kleine Harmonie is een onderdeel van{' '}
-    <a href="https://harmoniekapel.nl/" target="_blank">
+    <a
+      href="https://harmoniekapel.nl/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       De Koninklijke Harmoniekapel Delft
     </a>
     . Door de jaren heen is de Kleine Harmonie gegroeid tot een compleet
@@ -104,7 +107,6 @@ const InfoRow = ({ label, children }) => (
   >
     <div
       style={{
-        fontWeight: 700,
         flex: 1,
         justifyContent: 'center',
         display: 'flex',
