@@ -74,7 +74,7 @@ const IndexPage = () => (
       De Koninklijke Harmoniekapel Delft
     </a>
     . Door de jaren heen is het orkest uitgegroeid tot een orkest van ruim 50
-    muzikanten.De niet meer zo “Kleine” Harmonie is een gezellig orkest,
+    muzikanten. De niet meer zo “Kleine” Harmonie is een gezellig orkest,
     bestaande uit een mix van diverse leeftijdsgroepen, die samen met plezier
     gevarieerde en toegankelijke muziek willen maken.
     < ImageContainer >
