@@ -19,7 +19,6 @@ function SEO({ description, lang, meta, title = '' }) {
             title
             description
             author
-            image
             url
           }
         }
@@ -29,6 +28,7 @@ function SEO({ description, lang, meta, title = '' }) {
 
   const metaDescription = description || site.siteMetadata.description
 
+  console.log(`${site.siteMetadata.url}banner.png`);
   return (
     <Helmet
       htmlAttributes={{
@@ -50,7 +50,7 @@ function SEO({ description, lang, meta, title = '' }) {
         },
         {
           property: `og:image`,
-          content: `${site.siteMetadata.url}${site.siteMetadata.image}`,
+          content: `${site.siteMetadata.url}banner.png`,
         },
         {
           property: `og:type`,
