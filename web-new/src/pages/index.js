@@ -53,7 +53,7 @@ const IndexPage = () => (
     Het muziekevenement vindt plaats op 14 mei in Theater de Veste. Dit wordt
     geen standaardconcert waar het publiek alleen luistert naar de muziek van
     het orkest. Het wordt een grote spelshow waar jij als publiek de kans krijgt
-    om te gamen tijden het concert! De spellen die voorbij komen variëren van
+    om te gamen tijdens het concert! De spellen die voorbij komen variëren van
     populaire telefoonspellen tot klassieke computergames en ouderwetse
     klassiekers. De verschillende publieksteams strijden tegen elkaar om de
     eeuwige roem te veroveren.
