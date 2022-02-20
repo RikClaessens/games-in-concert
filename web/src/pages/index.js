@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 
-import { mediaQueries } from '../theme'
-import Layout from '../components/layout'
-import Seo from '../components/seo'
+import { mediaQueries } from '../theme';
+import Layout from '../components/layout';
+import Seo from '../components/seo';
 
 const BigTitle = styled.div`
   margin-top: 32px;
@@ -19,7 +19,7 @@ const BigTitle = styled.div`
   @media ${mediaQueries.laptop} {
     font-size: 40px;
   }
-`
+`;
 
 const Title = styled.div`
   margin-top: 32px;
@@ -33,13 +33,13 @@ const Title = styled.div`
   @media ${mediaQueries.laptop} {
     font-size: 36px;
   }
-`
+`;
 
 const ImageContainer = styled.div`
   max-width: 90%;
   width: 90%;
   margin: 32px auto 0 auto;
-`
+`;
 
 const IndexPage = () => (
   <Layout>
@@ -155,7 +155,7 @@ const IndexPage = () => (
     bestaande uit een mix van diverse leeftijdsgroepen, die samen met plezier
     gevarieerde en toegankelijke muziek willen maken.
   </Layout>
-)
+);
 
 const InfoRow = ({ label, children }) => (
   <div
@@ -179,6 +179,6 @@ const InfoRow = ({ label, children }) => (
       <span>{children}</span>
     </div>
   </div>
-)
+);
 
-export default IndexPage
+export default IndexPage;
