@@ -1,8 +1,7 @@
-import React from 'react'
-import { graphql, StaticQuery } from 'gatsby'
-import styled from 'styled-components'
-
-import BackgroundImage from 'gatsby-background-image'
+import React from "react"
+import { graphql, StaticQuery } from "gatsby"
+import styled from "styled-components"
+import BackgroundImage from "gatsby-background-image"
 
 const BackgroundSection = ({ className, children }) => (
   <StaticQuery
@@ -10,8 +9,8 @@ const BackgroundSection = ({ className, children }) => (
       query {
         desktop: file(relativePath: { eq: "bg.png" }) {
           childImageSharp {
-            fluid(quality: 90, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
+            fluid(maxWidth: 1440) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -19,17 +18,13 @@ const BackgroundSection = ({ className, children }) => (
     `}
     render={data => {
       const imageData = data.desktop.childImageSharp.fluid
+      console.log({ imageData })
       return (
-        <div style={{ width: '100vw', height: '100vh' }}>
-          <BackgroundImage
-            Tag="section"
-            className={className}
-            fluid={imageData}
-            backgroundColor={`#040e18`}
-          >
-            {children}
-          </BackgroundImage>
+        // <BackgroundImage Tag="section" className={className} fluid={imageData}>
+        <div style={{ background: `transparent url(${imageData.src})` }}>
+          {children}
         </div>
+        // </BackgroundImage>
       )
     }}
   />

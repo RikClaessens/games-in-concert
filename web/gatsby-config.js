@@ -1,13 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: `Games in Concert | Kleine Harmonie Delft`,
-    description: `Games in Concert, een interactief concert waar jij kan gamen op de klanken van de Kleine Harmonie!`,
-    author: `Rik Claessens`,
-    image: 'images/banner.png',
-    url: 'https://games-in-concert.harmoniedelft.nl/',
+    title: `Gatsby Starter Blog`,
+    author: {
+      name: `Kyle Mathews`,
+      summary: `who lives and works in San Francisco building useful things.`,
+    },
+    description: `A starter blog demonstrating what Gatsby can do.`,
+    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    social: {
+      twitter: `kylemathews`,
+    },
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -20,23 +25,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Games in Concert KHD`,
+        short_name: `Games in Concert KHD`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#18203a`,
         display: `minimal-ui`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
   ],
 }

@@ -8,69 +8,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
 
-function SEO({ description, lang, meta, title = '' }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-            url
-          }
-        }
-      }
-    `,
-  )
+function SEO({ lang, meta }) {
 
-  const metaDescription = description || site.siteMetadata.description
-
-  console.log(`${site.siteMetadata.url}banner.png`);
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title || site.siteMetadata.title}
+      title="Games in Concert | Kleine Harmonie Delft"
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: 'Games in Concert is een interactief concert van de Kleine Harmonie waar jij kan gamen op de klanken van je favoriete gamemuziek!',
         },
         {
           property: `og:title`,
-          content: title,
+          content: 'Games in Concert | Kleine Harmonie Delft',
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: 'Games in Concert is een interactief concert van de Kleine Harmonie waar jij kan gamen op de klanken van je favoriete gamemuziek!',
         },
         {
           property: `og:image`,
-          content: `${site.siteMetadata.url}banner.png`,
+          content: `https://games-in-concert.harmoniedelft.nl/images/banner.png`,
         },
         {
           property: `og:type`,
           content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
         },
       ].concat(meta)}
     />

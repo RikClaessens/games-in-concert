@@ -27,7 +27,7 @@ import {
 
 import './layout.css'
 import Background from './Background'
-import Top from './Top'
+import { Top } from './Top'
 import Bottom from './Bottom'
 import Mid from './Mid'
 import { mediaQueries } from '../theme'
@@ -105,7 +105,7 @@ const Layout = ({ children }) => {
         </TopContainer>
         <Mid>
           <Container>
-            <span style={{ marginTop: -100, pointerEvents: 'none' }}>
+            <span style={{ marginTop: -100 }}>
               {children}
             </span>
           </Container>
