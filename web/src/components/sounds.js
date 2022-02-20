@@ -196,16 +196,16 @@ export const playsoundIfClicked = ({ event, ref, target, playSound }) => {
   const { clientX, clientY } = event;
 
   const rect = ref.current.getBoundingClientRect();
-  // console.log('checking', {
-  //   clientX,
-  //   clientY,
-  //   rect,
-  //   target,
-  //   left: target.left * rect.width + rect.left,
-  //   right: target.right * rect.width + rect.left,
-  //   top: target.top * rect.height + rect.top,
-  //   bottom: target.bottom * rect.height + rect.top,
-  // });
+  console.log('checking', {
+    clientX,
+    clientY,
+    rect,
+    target,
+    left: target.left * rect.width + rect.left,
+    right: target.right * rect.width + rect.left,
+    top: target.top * rect.height + rect.top,
+    bottom: target.bottom * rect.height + rect.top,
+  });
   if (
     clientX >= target.left * rect.width + rect.left &&
     clientX <= target.right * rect.width + rect.left &&

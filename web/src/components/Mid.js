@@ -3,7 +3,13 @@ import { graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
 
-const BackgroundSection = ({ className, children }) => (
+const BackgroundSection = ({
+  className,
+  children,
+  sounds,
+  theRef,
+  handleClick,
+}) => (
   <StaticQuery
     query={graphql`
       query {
@@ -24,6 +30,13 @@ const BackgroundSection = ({ className, children }) => (
           className={className}
           fluid={imageData}
           alt=""
+          onClick={(event) =>
+            handleClick({
+              event,
+              sounds,
+              ref: theRef,
+            })
+          }
         >
           {children}
         </BackgroundImage>

@@ -103,7 +103,11 @@ const Layout = ({ children }) => {
         >
           <Top />
         </TopContainer>
-        <Mid>
+        <Mid
+          sounds={topContainerSounds}
+          theRef={topContainer}
+          handleClick={handleClick}
+        >
           <Container>
             <span style={{ marginTop: -100 }}>{children}</span>
           </Container>
@@ -140,7 +144,7 @@ const Wrapper = styled('div')`
 `;
 
 const TopContainer = styled('div')`
-  margin-bottom: -5%;
+  margin-bottom: -10%;
   pointer-events: all;
 `;
 
