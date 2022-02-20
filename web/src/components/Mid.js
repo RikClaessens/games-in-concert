@@ -1,7 +1,7 @@
-import React from "react"
-import { graphql, StaticQuery } from "gatsby"
-import styled from "styled-components"
-import BackgroundImage from "gatsby-background-image"
+import React from 'react';
+import { graphql, StaticQuery } from 'gatsby';
+import styled from 'styled-components';
+import BackgroundImage from 'gatsby-background-image';
 
 const BackgroundSection = ({ className, children }) => (
   <StaticQuery
@@ -16,16 +16,21 @@ const BackgroundSection = ({ className, children }) => (
         }
       }
     `}
-    render={data => {
-      const imageData = data.desktop.childImageSharp.fluid
+    render={(data) => {
+      const imageData = data.desktop.childImageSharp.fluid;
       return (
-        <BackgroundImage Tag="section" className={className} fluid={imageData}>
+        <BackgroundImage
+          Tag="section"
+          className={className}
+          fluid={imageData}
+          alt=""
+        >
           {children}
         </BackgroundImage>
-      )
+      );
     }}
   />
-)
+);
 
 const Background = styled(BackgroundSection)`
   background-position: center top;
@@ -34,6 +39,6 @@ const Background = styled(BackgroundSection)`
     background-size: contain !important;
     background-repeat: repeat-y !important;
   }
-`
+`;
 
-export default Background
+export default Background;

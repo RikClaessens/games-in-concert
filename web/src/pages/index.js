@@ -58,7 +58,10 @@ const IndexPage = () => (
     klassiekers. De verschillende publieksteams strijden tegen elkaar om de
     eeuwige roem te veroveren.
     <ImageContainer>
-      <StaticImage src="../images/kh-lijm-en-cultuur.jpg" />
+      <StaticImage
+        src="../images/kh-lijm-en-cultuur.jpg"
+        alt="Kleine Harmonie in Lijm en Cultuur"
+      />
     </ImageContainer>
     <Title>Kaartverkoop</Title>
     De kaartverkoop is gestart! Via{' '}
@@ -110,7 +113,7 @@ const IndexPage = () => (
     </InfoRow>
     <br />
     Het middagconcert is een verkorte versie van het avondconcert en zal maar
-    een uurtje duren tot 17:00. Het avond concert zal in totaal rond de twee uur
+    een uurtje duren tot 17:00. Het avondconcert zal in totaal rond de twee uur
     duren. Tijdens het avondconcert zullen er meer verschillende games worden
     gespeeld. Wil je graag de kans krijgen om op het podium een spel te kunnen
     spelen, zorg er dan voor dat je opvallend gekleed bent en dus makkelijker
@@ -124,7 +127,7 @@ const IndexPage = () => (
     theater van de Games. Met de jarenlange ervaring en sfeer van dit theater
     wordt dit gegarandeerd een succes.
     <ImageContainer>
-      <StaticImage src="../images/kh.jpg" />
+      <StaticImage src="../images/kh.jpg" alt="De Kleine Harmonie Delft" />
     </ImageContainer>
     <Title>Wat kun je verwachten?</Title>
     Tijdens het concert zal het publiek, net zoals bij vele bekende spelshows,

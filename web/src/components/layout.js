@@ -1,7 +1,7 @@
-import React, { useRef } from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import useSound from 'use-sound'
+import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import useSound from 'use-sound';
 
 // sounds
 import {
@@ -23,24 +23,24 @@ import {
   angryBirds,
   donkeyKong,
   playsoundIfClicked,
-} from './sounds'
+} from './sounds';
 
-import './layout.css'
-import Background from './Background'
-import { Top } from './Top'
-import Bottom from './Bottom'
-import Mid from './Mid'
-import { mediaQueries } from '../theme'
+import './layout.css';
+import Background from './Background';
+import { Top } from './Top';
+import Bottom from './Bottom';
+import Mid from './Mid';
+import { mediaQueries } from '../theme';
 
 const Layout = ({ children }) => {
-  const topContainer = useRef(null)
-  const bottomContainer = useRef(null)
+  const topContainer = useRef(null);
+  const bottomContainer = useRef(null);
 
-  const [playPacmanSound] = useSound(pacman.sound)
-  const [playBlinkySound] = useSound(blinky.sound)
-  const [playPinkySound] = useSound(pinky.sound)
-  const [playInkySound] = useSound(inky.sound)
-  const [playClydeSound] = useSound(clyde.sound)
+  const [playPacmanSound] = useSound(pacman.sound);
+  const [playBlinkySound] = useSound(blinky.sound);
+  const [playPinkySound] = useSound(pinky.sound);
+  const [playInkySound] = useSound(inky.sound);
+  const [playClydeSound] = useSound(clyde.sound);
 
   const topContainerSounds = [
     { ...pacman, playSound: playPacmanSound },
@@ -48,20 +48,20 @@ const Layout = ({ children }) => {
     { ...pinky, playSound: playPinkySound },
     { ...inky, playSound: playInkySound },
     { ...clyde, playSound: playClydeSound },
-  ]
+  ];
 
-  const [playSmbOneUpSound] = useSound(smbOneUp.sound)
-  const [playSmbCoinSound] = useSound(smbCoin.sound)
-  const [playSmbJumpSound] = useSound(smbJump.sound)
-  const [playSmbVineSound] = useSound(smbVine.sound)
-  const [playSmbMarioDieSound] = useSound(smbMarioDie.sound)
-  const [playSmbPowerUpSound] = useSound(smbPowerUp.sound)
-  const [playZeldaSecretSound] = useSound(zeldaSecret.sound)
-  const [playSonicSound] = useSound(sonic.sound)
-  const [playPokemonSound] = useSound(pokemon.sound)
-  const [playMarioKartSound] = useSound(marioKart.sound)
-  const [playAngryBirdsSound] = useSound(angryBirds.sound)
-  const [playDonkeyKongSound] = useSound(donkeyKong.sound)
+  const [playSmbOneUpSound] = useSound(smbOneUp.sound);
+  const [playSmbCoinSound] = useSound(smbCoin.sound);
+  const [playSmbJumpSound] = useSound(smbJump.sound);
+  const [playSmbVineSound] = useSound(smbVine.sound);
+  const [playSmbMarioDieSound] = useSound(smbMarioDie.sound);
+  const [playSmbPowerUpSound] = useSound(smbPowerUp.sound);
+  const [playZeldaSecretSound] = useSound(zeldaSecret.sound);
+  const [playSonicSound] = useSound(sonic.sound);
+  const [playPokemonSound] = useSound(pokemon.sound);
+  const [playMarioKartSound] = useSound(marioKart.sound);
+  const [playAngryBirdsSound] = useSound(angryBirds.sound);
+  const [playDonkeyKongSound] = useSound(donkeyKong.sound);
 
   const bottomContainerSounds = [
     { ...smbOneUp, playSound: playSmbOneUpSound },
@@ -76,23 +76,23 @@ const Layout = ({ children }) => {
     { ...marioKart, playSound: playMarioKartSound },
     { ...angryBirds, playSound: playAngryBirdsSound },
     { ...donkeyKong, playSound: playDonkeyKongSound },
-  ]
+  ];
 
   const handleClick = ({ event, ref, sounds }) => {
-    sounds.forEach(target =>
+    sounds.forEach((target) =>
       playsoundIfClicked({
         event,
         ref,
         ...target,
       }),
-    )
-  }
+    );
+  };
 
   return (
     <Background>
       <Wrapper>
         <TopContainer
-          onClick={event =>
+          onClick={(event) =>
             handleClick({
               event,
               sounds: topContainerSounds,
@@ -105,13 +105,11 @@ const Layout = ({ children }) => {
         </TopContainer>
         <Mid>
           <Container>
-            <span style={{ marginTop: -100 }}>
-              {children}
-            </span>
+            <span style={{ marginTop: -100 }}>{children}</span>
           </Container>
         </Mid>
         <BottomContainer
-          onClick={event =>
+          onClick={(event) =>
             handleClick({
               event,
               sounds: bottomContainerSounds,
@@ -124,8 +122,8 @@ const Layout = ({ children }) => {
         </BottomContainer>
       </Wrapper>
     </Background>
-  )
-}
+  );
+};
 
 const Wrapper = styled('div')`
   max-width: 98%;
@@ -139,16 +137,16 @@ const Wrapper = styled('div')`
   @media ${mediaQueries.laptop} {
     max-width: 70%;
   }
-`
+`;
 
 const TopContainer = styled('div')`
-  margin-bottom: -10%;
+  margin-bottom: -5%;
   pointer-events: all;
-`
+`;
 
 const BottomContainer = styled('div')`
   pointer-events: all;
-`
+`;
 
 const Container = styled('div')`
   font-family: 'Free Pixel';
@@ -174,10 +172,10 @@ const Container = styled('div')`
   a {
     color: #efed6f;
   }
-`
+`;
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;

@@ -1,25 +1,25 @@
 // pacman
-import pacmanSound from '../sounds/sound1.wav'
-import blinkySound from '../sounds/sound2.wav'
-import pinkySound from '../sounds/sound3.wav'
-import inkySound from '../sounds/sound4.wav'
-import clydeSound from '../sounds/sound5.wav'
+import pacmanSound from '../sounds/sound1.mp3';
+import blinkySound from '../sounds/sound2.mp3';
+import pinkySound from '../sounds/sound3.mp3';
+import inkySound from '../sounds/sound4.mp3';
+import clydeSound from '../sounds/sound5.mp3';
 
 // super mario bros
-import smbOneUpSound from '../sounds/sound6.wav'
-import smbCoinSound from '../sounds/sound7.wav'
-import smbJumpSound from '../sounds/sound8.wav'
-import smbMarioDieSound from '../sounds/sound9.wav'
-import smbPowerUpSound from '../sounds/sound10.wav'
-import smbVineSound from '../sounds/sound11.wav'
+import smbOneUpSound from '../sounds/sound6.mp3';
+import smbCoinSound from '../sounds/sound7.mp3';
+import smbJumpSound from '../sounds/sound8.mp3';
+import smbMarioDieSound from '../sounds/sound9.mp3';
+import smbPowerUpSound from '../sounds/sound10.mp3';
+import smbVineSound from '../sounds/sound11.mp3';
 
 // right
-import zeldaSecretSound from '../sounds/sound12.wav'
-import sonicSound from '../sounds/sound13.mp3'
-import pokemonSound from '../sounds/sound14.mp3'
-import marioKartSound from '../sounds/sound15.mp3'
-import angryBirdsSound from '../sounds/sound16.m4a'
-import donkeyKongSound from '../sounds/sound17.mp3'
+import zeldaSecretSound from '../sounds/sound12.mp3';
+import sonicSound from '../sounds/sound13.mp3';
+import pokemonSound from '../sounds/sound14.mp3';
+import marioKartSound from '../sounds/sound15.mp3';
+import angryBirdsSound from '../sounds/sound16.mp3';
+import donkeyKongSound from '../sounds/sound17.mp3';
 
 export const pacman = {
   target: {
@@ -29,7 +29,7 @@ export const pacman = {
     bottom: 0.943333333,
   },
   sound: pacmanSound,
-}
+};
 
 export const blinky = {
   target: {
@@ -39,7 +39,7 @@ export const blinky = {
     bottom: 0.593333333,
   },
   sound: blinkySound,
-}
+};
 
 export const inky = {
   target: {
@@ -49,7 +49,7 @@ export const inky = {
     bottom: 0.84,
   },
   sound: inkySound,
-}
+};
 
 export const pinky = {
   target: {
@@ -59,7 +59,7 @@ export const pinky = {
     bottom: 0.691111111,
   },
   sound: pinkySound,
-}
+};
 
 export const clyde = {
   target: {
@@ -69,7 +69,7 @@ export const clyde = {
     bottom: 0.984444444,
   },
   sound: clydeSound,
-}
+};
 
 export const smbOneUp = {
   target: {
@@ -79,7 +79,7 @@ export const smbOneUp = {
     bottom: 0.55,
   },
   sound: smbOneUpSound,
-}
+};
 
 export const smbCoin = {
   target: {
@@ -89,7 +89,7 @@ export const smbCoin = {
     bottom: 0.55,
   },
   sound: smbCoinSound,
-}
+};
 
 export const smbVine = {
   target: {
@@ -99,7 +99,7 @@ export const smbVine = {
     bottom: 0.55,
   },
   sound: smbVineSound,
-}
+};
 
 export const smbJump = {
   target: {
@@ -109,7 +109,7 @@ export const smbJump = {
     bottom: 0.61111111,
   },
   sound: smbJumpSound,
-}
+};
 
 export const smbMarioDie = {
   target: {
@@ -119,7 +119,7 @@ export const smbMarioDie = {
     bottom: 0.61111111,
   },
   sound: smbMarioDieSound,
-}
+};
 
 export const smbPowerUp = {
   target: {
@@ -129,7 +129,7 @@ export const smbPowerUp = {
     bottom: 0.61111111,
   },
   sound: smbPowerUpSound,
-}
+};
 
 // right
 export const zeldaSecret = {
@@ -140,7 +140,7 @@ export const zeldaSecret = {
     bottom: 0.55,
   },
   sound: zeldaSecretSound,
-}
+};
 
 export const sonic = {
   target: {
@@ -150,7 +150,7 @@ export const sonic = {
     bottom: 0.55,
   },
   sound: sonicSound,
-}
+};
 
 export const pokemon = {
   target: {
@@ -160,7 +160,7 @@ export const pokemon = {
     bottom: 0.55,
   },
   sound: pokemonSound,
-}
+};
 
 export const marioKart = {
   target: {
@@ -170,7 +170,7 @@ export const marioKart = {
     bottom: 0.61111111,
   },
   sound: marioKartSound,
-}
+};
 
 export const angryBirds = {
   target: {
@@ -180,7 +180,7 @@ export const angryBirds = {
     bottom: 0.61111111,
   },
   sound: angryBirdsSound,
-}
+};
 
 export const donkeyKong = {
   target: {
@@ -190,29 +190,29 @@ export const donkeyKong = {
     bottom: 0.61111111,
   },
   sound: donkeyKongSound,
-}
+};
 
 export const playsoundIfClicked = ({ event, ref, target, playSound }) => {
-  const { clientX, clientY } = event
+  const { clientX, clientY } = event;
 
-  const rect = ref.current.getBoundingClientRect()
-  //   console.log('checking', {
-  //     clientX,
-  //     clientY,
-  //     rect,
-  //     target,
-  //     left: target.left * rect.width + rect.left,
-  //     right: target.right * rect.width + rect.left,
-  //     top: target.top * rect.height + rect.top,
-  //     bottom: target.bottom * rect.height + rect.top,
-  //   })
+  const rect = ref.current.getBoundingClientRect();
+  // console.log('checking', {
+  //   clientX,
+  //   clientY,
+  //   rect,
+  //   target,
+  //   left: target.left * rect.width + rect.left,
+  //   right: target.right * rect.width + rect.left,
+  //   top: target.top * rect.height + rect.top,
+  //   bottom: target.bottom * rect.height + rect.top,
+  // });
   if (
     clientX >= target.left * rect.width + rect.left &&
     clientX <= target.right * rect.width + rect.left &&
     clientY >= target.top * rect.height + rect.top &&
     clientY <= target.bottom * rect.height + rect.top
   ) {
-    console.log('playing sound')
-    playSound()
+    console.log('playing sound');
+    playSound();
   }
-}
+};
