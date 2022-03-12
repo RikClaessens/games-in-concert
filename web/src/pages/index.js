@@ -6,6 +6,10 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { mediaQueries } from '../theme';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
+import TicketButton from '../components/TicketButton';
+
+const ticketLink =
+  'https://www.theaterdeveste.nl/programma/8095/De_Kleine_Harmonie/Games_in_Concert';
 
 const BigTitle = styled.div`
   margin-top: 32px;
@@ -65,14 +69,11 @@ const IndexPage = () => (
     </ImageContainer>
     <Title>Kaartverkoop</Title>
     De kaartverkoop is gestart! Via{' '}
-    <Link
-      to="https://www.theaterdeveste.nl/programma/8095/De_Kleine_Harmonie/Games_in_Concert"
-      target="_blank"
-      rel="noopener"
-    >
-      deze link van Theater de Veste
+    <Link to={ticketLink} target="_blank" rel="noopener">
+      de site van Theater de Veste
     </Link>{' '}
     kun je nú je kaartjes kopen.
+    <TicketButton href={ticketLink} />
     <Title> Praktische informatie</Title>
     <InfoRow label="Datum">14 mei 2022</InfoRow>
     <InfoRow label="Adres">
