@@ -16,7 +16,7 @@
     "deploy:sls": "serverless deploy --aws-profile rik-aws --stage prod",
     "deploy": "cd web && yarn gatsby clean && yarn gatsby build && cd .. && yarn s3-sync && yarn invalidate-cloudfront",
     "package": "serverless package",
-    "invalidate-cloudfront": "aws cloudfront create-invalidation --profile rik-aws --distribution-id E316NP9Z37GOBO --paths '/*'",
+    "invalidate-cloudfront": "aws cloudfront create-invalidation --profile rik-aws --distribution-id EO3TKPFYJI82V --paths '/*'",
     "s3-sync": "aws --profile rik-aws s3 sync web/public/ s3://games-in-concert.harmoniedelft.nl --exclude '*.DS_Store' --delete"
   }
 }

@@ -13,13 +13,13 @@ custom:
   siteName:
     prod: games-in-concert.harmoniedelft.nl
     other: ${self:custom.stage}.games-in-concert.harmoniedelft.nl
-  hostedZoneName: ${self:custom.siteName.prod}
-  hostedZoneId: Z078679117A6O1WMKH5F7
-  certArn: arn:aws:acm:us-east-1:000914857670:certificate/84986503-b334-4a1c-8aa8-7aabc9b0bb16
+  hostedZoneName: harmoniedelft.nl
+  hostedZoneId: Z10342343K1OSH2DX5TDT
+  certArn: arn:aws:acm:us-east-1:000914857670:certificate/2635b325-97c1-4bf0-9b1e-590df10852b1
   bucketName: ${self:custom.siteName.${self:custom.stage}, self:custom.siteName.other}
   s3Sync:
     - bucketName: ${self:custom.bucketName}
-      localDir: public
+      localDir: web/public
 
 resources:
   Conditions:

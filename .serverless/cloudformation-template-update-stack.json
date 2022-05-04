@@ -161,7 +161,7 @@
             "ViewerProtocolPolicy": "redirect-to-https"
           },
           "ViewerCertificate": {
-            "AcmCertificateArn": "arn:aws:acm:us-east-1:000914857670:certificate/84986503-b334-4a1c-8aa8-7aabc9b0bb16",
+            "AcmCertificateArn": "arn:aws:acm:us-east-1:000914857670:certificate/2635b325-97c1-4bf0-9b1e-590df10852b1",
             "SslSupportMethod": "sni-only"
           }
         }
@@ -171,7 +171,7 @@
       "Type": "AWS::Route53::RecordSet",
       "Condition": "IsProd",
       "Properties": {
-        "HostedZoneName": "games-in-concert.harmoniedelft.nl.",
+        "HostedZoneName": "harmoniedelft.nl.",
         "AliasTarget": {
           "DNSName": {
             "Fn::GetAtt": "CloudFrontDistribution.DomainName"
@@ -186,7 +186,7 @@
       "Type": "AWS::Route53::RecordSet",
       "Condition": "IsProd",
       "Properties": {
-        "HostedZoneName": "games-in-concert.harmoniedelft.nl.",
+        "HostedZoneName": "harmoniedelft.nl.",
         "AliasTarget": {
           "DNSName": {
             "Fn::GetAtt": "CloudFrontDistribution.DomainName"
